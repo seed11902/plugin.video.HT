@@ -139,7 +139,8 @@ elif mode[0] == 'hornydragon':
         adddir('PewDiePie',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/PewDiePie?max-results=200'},'')
         adddir('Henry\'s Kitchen',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E5%8F%B2%E4%B8%8A%E6%9C%80%E6%82%B2%E5%93%80%E7%9A%84%E7%83%B9%E9%A3%AA%E6%95%99%E5%AD%B8?max-results=200'},'')
         adddir('Grade A Under A',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Grade%20A%20Under%20A?&max-results=200'},'')
-        #adddir(u'電玩驢子',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E9%9B%BB%E7%8E%A9%E9%A9%A2%E5%AD%90?&max-results=200'},'')
+        adddir(u'電玩驢子',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E9%9B%BB%E7%8E%A9%E9%A9%A2%E5%AD%90?&max-results=200'},'')
+        adddir('Casually Explained',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Casually%20Explained?max-results=200'},'')
         xbmcplugin.addSortMethod(addon_handle, sortMethod=xbmcplugin.SORT_METHOD_TITLE)
         xbmcplugin.endOfDirectory(addon_handle)
 elif mode[0] == '45gsp':
