@@ -63,7 +63,7 @@ def subUrl(a):
 def hdx3(url):
         while url:
             res = requests.get(url, headers=headers)   
-            soup = BeautifulSoup(res.text, "html5lib")
+            soup = BeautifulSoup(res.text, "html.parser")
             for outer in soup.select('.post-outer'):
                 for a in outer.find_all('a', href=True):
                     try:
