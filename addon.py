@@ -31,7 +31,7 @@ def jsonXuite(mediumId,passwd):
     return a
 def subUrl(a):
     resSub = requests.get(a['href'], headers=headers)
-    soupSub = BeautifulSoup(resSub.text, "html.parser")
+    soupSub = BeautifulSoup(resSub.text, "html5lib")
     for hentry in soupSub.select('.hentry'):
         for index,iframe in enumerate(hentry.select('iframe')):
             findxuite = iframe['src'].find('http://vlog.xuite.net')
