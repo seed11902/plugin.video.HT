@@ -54,7 +54,10 @@ def subUrl(a):
                             title = hentry.select('h3')[0].text.replace('\n', '')
                         else:
                             title = hentry.select('h3')[0].text.replace('\n', '') + "_" + str(index)
-                        media = jd['media']["html5Url"]
+                        if jd['media']["html5HQUrl"] != "":
+                            media = jd['media']["html5HQUrl"]
+                        else:
+                            media = jd['media']["html5Url"]
                         image = 'http://vlog.xuite.net' + jd['media']["thumbnailUrl"]
                         addLink(title, media, image)
                         break
