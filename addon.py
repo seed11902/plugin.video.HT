@@ -45,19 +45,17 @@ def subUrl(a):
                 url = urlparse.urlparse(iframe['src'])
                 mediumId = base64.b64decode(url.path.split('/')[2]).split('-')[1].split('.')[0]
                 for i, passwd in enumerate(pwd):
-                    a = jsonXuite(mediumId, pwd[i][-4:])
-                    obj = requests.get(a).json()
-                    encodedjson = json.dumps(obj)
-                    jd = json.loads(encodedjson)
+                    header = {"Referer":"http://vlog.xuite.net"}
+                    payload =  {"act":"checkPasswd","mediumId":mediumId,"passwd":pwd[i][-4:]}
+                    obj = requests.post('http://vlog.xuite.net/_ajax/default/media/ajax',headers=header,data=payload)
+                    jd = json.loads(obj.text)
                     if jd["success"] == True:
-                        encodedjson2 = json.dumps(jd["media"])
-                        jd2 = json.loads(encodedjson2)
                         if index == 0:
                             title = hentry.select('h3')[0].text.replace('\n', '')
                         else:
                             title = hentry.select('h3')[0].text.replace('\n', '') + "_" + str(index)
-                        media = jd2["html5Url"]
-                        image = 'http://vlog.xuite.net' + jd2["thumbnailUrl"]
+                        media = jd["html5Url"]
+                        image = 'http://vlog.xuite.net' + jd["thumbnailUrl"]
                         addLink(title, media, image)
                         break
 def hdx3(url):
