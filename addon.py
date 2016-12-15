@@ -31,7 +31,7 @@ def jsonXuite(mediumId,passwd):
     return a
 def subUrl(a):
     resSub = requests.get(a['href'], headers=headers)
-    soupSub = BeautifulSoup(resSub.text, "lxml")
+    soupSub = BeautifulSoup(resSub.text, "html.parser")
     for hentry in soupSub.select('.hentry'):
         for index,iframe in enumerate(hentry.select('iframe')):
             findxuite = iframe['src'].find('http://vlog.xuite.net')
@@ -54,14 +54,14 @@ def subUrl(a):
                             title = hentry.select('h3')[0].text.replace('\n', '')
                         else:
                             title = hentry.select('h3')[0].text.replace('\n', '') + "_" + str(index)
-                        media = jd["html5Url"]
-                        image = 'http://vlog.xuite.net' + jd["thumbnailUrl"]
+                        media = jd['media']["html5Url"]
+                        image = 'http://vlog.xuite.net' + jd['media']["thumbnailUrl"]
                         addLink(title, media, image)
                         break
 def hdx3(url):
         while url:
             res = requests.get(url, headers=headers)   
-            soup = BeautifulSoup(res.text, "lxml")
+            soup = BeautifulSoup(res.text, "html.parser")
             for outer in soup.select('.post-outer'):
                 for a in outer.find_all('a', href=True):
                     try:
@@ -76,7 +76,7 @@ def hdx3(url):
 def gsp(url):
         while url:
             res = requests.get(url, headers=headers)   
-            soup = BeautifulSoup(res.text, "lxml")
+            soup = BeautifulSoup(res.text, "html.parser")
             for outer in soup.select('.entry-title'):
                 for a in outer.find_all('a', href=True):
                     try:
