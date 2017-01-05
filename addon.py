@@ -142,6 +142,10 @@ elif mode[0] == 'hornydragon':
         adddir('Grade A Under A',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Grade%20A%20Under%20A?&max-results=200'},'')
         adddir(u'電玩驢子',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E9%9B%BB%E7%8E%A9%E9%A9%A2%E5%AD%90?&max-results=200'},'')
         adddir('Casually Explained',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Casually%20Explained?max-results=200'},'')
+        adddir('KIDS vs. FOOD',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E5%B0%8F%E5%AD%A9%E5%B0%8D%E9%A3%9F%E7%89%A9%E7%9A%84%E5%8F%8D%E6%87%89?&max-results=200'},'')
+        adddir('Don\'t Hug Me I\'m Scared',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E5%88%A5%E6%8A%B1%E6%88%91%E6%88%91%E6%80%95%E6%80%95?&max-results=200'},'')
+        adddir('Penn and Teller',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Penn%20and%20Teller?&max-results=200'},'')
+        adddir('George Carlin',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/George%20Carlin?&max-results=200'},'')
         xbmcplugin.addSortMethod(addon_handle, sortMethod=xbmcplugin.SORT_METHOD_TITLE)
         xbmcplugin.endOfDirectory(addon_handle)
 elif mode[0] == '45gsp':
