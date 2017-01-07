@@ -146,6 +146,8 @@ elif mode[0] == 'hornydragon':
         adddir('Don\'t Hug Me I\'m Scared',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/%E5%88%A5%E6%8A%B1%E6%88%91%E6%88%91%E6%80%95%E6%80%95?&max-results=200'},'')
         adddir('Penn and Teller',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Penn%20and%20Teller?&max-results=200'},'')
         adddir('George Carlin',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/George%20Carlin?&max-results=200'},'')
+        adddir('Domics',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Domics?&max-results=200'},'')
+        adddir('Family Feud',{'mode': 'folder','Type': 'hornydragon', 'Url': 'http://hornydragon.blogspot.com/search/label/Family%20Feud?&max-results=200'},'')
         xbmcplugin.addSortMethod(addon_handle, sortMethod=xbmcplugin.SORT_METHOD_TITLE)
         xbmcplugin.endOfDirectory(addon_handle)
 elif mode[0] == '45gsp':
