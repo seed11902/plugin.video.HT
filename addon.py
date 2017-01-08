@@ -24,7 +24,7 @@ def find2(pattern, string):
     if match: 
         ret =  match
     else: 
-        ret = "not find"
+        ret = None
     return ret
 def jsonXuite(mediumId,passwd):
     a = "http://vlog.xuite.net/_ajax/default/media/ajax?act=checkPasswd&mediumId=%s&passwd=%s"%(mediumId, passwd)
@@ -42,6 +42,18 @@ def subUrl(a):
                     str1 = content.text.replace('\n','')
                     str1 = str1.replace(' ', '')
                     pwd = find2(u'密碼\W*：' + r'\d{4}',str1)
+                    if pwd is None:
+                                str1 = str1.replace(u'零','0')
+                                str1 = str1.replace(u'一','1')
+                                str1 = str1.replace(u'二','2')
+                                str1 = str1.replace(u'三','3')
+                                str1 = str1.replace(u'四','4')
+                                str1 = str1.replace(u'五','5')
+                                str1 = str1.replace(u'六','6')
+                                str1 = str1.replace(u'七','7')
+                                str1 = str1.replace(u'八','8')
+                                str1 = str1.replace(u'九','9')
+                                pwd = find2(u'密碼\W*：' + r'\d{4}',str1)
                 url = urlparse.urlparse(iframe['src'])
                 mediumId = base64.b64decode(url.path.split('/')[2]).split('-')[1].split('.')[0]
                 for i, passwd in enumerate(pwd):
