@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*- 
+from gevent import monkey; monkey.patch_all()
+import gevent
 import urllib,urllib2,re,xbmcplugin,xbmcgui
 from bs4 import BeautifulSoup
 import urlparse
