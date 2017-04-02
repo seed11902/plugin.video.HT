@@ -54,6 +54,8 @@ def subUrl(a):
                                 str1 = str1.replace(u'八','8')
                                 str1 = str1.replace(u'九','9')
                                 pwd = find2(u'密碼\W*：' + r'\d{4}',str1)
+                                if pwd is None:
+                                        pwd = find2(u'密碼\W*：' + r'\w{4}',str1)
                 url = urlparse.urlparse(iframe['src'])
                 mediumId = base64.b64decode(url.path.split('/')[2]).split('-')[1].split('.')[0]
                 for i, passwd in enumerate(pwd):
